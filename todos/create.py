@@ -26,7 +26,7 @@ def create(event, context):
         'updatedAt': timestamp,
     }
 
-    # write the todo to the database
+    # write the todo to the database siuudsds
     table.put_item(Item=item)
 
     # create a response
