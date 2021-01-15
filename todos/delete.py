@@ -7,7 +7,7 @@ dynamodb = boto3.resource('dynamodb')
 def delete(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
-    # delete the todo from the database 4
+    # delete the todo from the database 467
     table.delete_item(
         Key={
             'id': event['pathParameters']['id']
