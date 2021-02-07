@@ -23,12 +23,12 @@ def getLanguage(event, context):
 
     if language == "en":
 
-        result = translate.translate_text(text['Item'], 
+        result = translate.translate_text(text['text'], 
                 SourceLanguageCode="es", TargetLanguageCode="en")
 
     elif language == "fr":    
 
-        result = translate.translate_text(text['Item'], 
+        result = translate.translate_text(text['text'], 
                 SourceLanguageCode="es", TargetLanguageCode="fr")
     
     # create a response
