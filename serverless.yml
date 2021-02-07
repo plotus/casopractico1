@@ -16,8 +16,23 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-        - translate:*
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+
+Statement: 
+  Action: 
+      - translate:*
+      - comprehend:DetectDominantLanguage
+      - cloudwatch:GetMetricStatistics
+      - cloudwatch:ListMetrics
+      - s3:ListAllMyBuckets
+      - s3:ListBucket
+      - s3:GetBucketLocation
+      - iam:ListRoles
+      - iam:GetRole
+  Effect: Allow
+  Resource": "*"
+        
+    
 
 
 functions:
