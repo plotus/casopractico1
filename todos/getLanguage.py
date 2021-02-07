@@ -8,7 +8,7 @@ dynamodb = boto3.resource('dynamodb')
 translate = boto3.client(service_name='translate', region_name='region', use_ssl=True)
 
 
-def get(event, context):
+def getLanguage(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
     # fetch todo from the database
