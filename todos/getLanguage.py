@@ -12,7 +12,7 @@ def getLanguage(event, context):
 
     language = event['pathParameters']['language']
 
-    # fetch todo from the database holad
+    # fetch todo from the database
     result = table.get_item(
         Key={
             'id': event['pathParameters']['id']
@@ -31,11 +31,11 @@ def getLanguage(event, context):
                 SourceLanguageCode="es", TargetLanguageCode="fr")
 
     elif language == "uu":    
-        texto = result['Item'].text
+        texto = {result['text']}
         response = translate.translate_text(Text=texto, 
                 SourceLanguageCode="es", TargetLanguageCode="fr")
 
-    # create a responseff
+    # create a response
     response = {
         "statusCode": 200,
         "body": json.dumps(response,
