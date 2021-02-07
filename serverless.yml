@@ -44,8 +44,9 @@ functions:
           path: todos/{id}
           method: get
           cors: true
-          
+
   getLanguage:
+    handler: todos/getLanguage.getLanguage
     events:
       - http:
           path: todos/{id}/{language}
