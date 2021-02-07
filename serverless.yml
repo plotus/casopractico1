@@ -28,7 +28,7 @@ provider:
         - s3:GetBucketLocation
         - iam:ListRoles
         - iam:GetRole
-      Resource": "*"
+      Resource: "*"
         
 functions:
   create:
