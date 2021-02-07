@@ -5,7 +5,7 @@ from todos import decimalencoder
 import boto3
 dynamodb = boto3.resource('dynamodb')
 
-translate = boto3.client(service_name='translate', region_name='region', use_ssl=True)
+translate = boto3.client(service_name='translate')
 
 
 def getLanguage(event, context):
@@ -23,19 +23,15 @@ def getLanguage(event, context):
 
     if language == "en":
 
-        result = translate.translate_text(text['text'], 
+        response = translate.translate_text(text['text'], 
                 SourceLanguageCode="es", TargetLanguageCode="en")
 
     elif language == "fr":    
 
-        result = translate.translate_text(text['text'], 
+        response = translate.translate_text(text['text'], 
                 SourceLanguageCode="es", TargetLanguageCode="fr")
     
     # create a response
-    response = {
-        "statusCode": 200,
-        "body": json.dumps(result.get('TranslatedText'),
-                           cls=decimalencoder.DecimalEncoder)
-    }
+    
 
     return response
