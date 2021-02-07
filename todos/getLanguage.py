@@ -12,14 +12,14 @@ def getLanguage(event, context):
 
     language = event['pathParameters']['language']
 
-    # fetch todo from the database hola
+    # fetch todo from the database holad
     result = table.get_item(
         Key={
             'id': event['pathParameters']['id']
         }
     )
 
-    resultff = translate.translate_text(Text="Hello, Worldd",
+    resultff = translate.translate_text(Text="Hello, World",
                                   SourceLanguageCode="en",
                                   TargetLanguageCode="de")
 
