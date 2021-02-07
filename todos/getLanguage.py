@@ -9,7 +9,7 @@ dynamodb = boto3.resource('dynamodb')
 def getLanguage(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
-    # fetch todo from the database hola
+    # fetch todo from the database hola2
     result = table.get_item(
         Key={
             'id': event['pathParameters']['id']
