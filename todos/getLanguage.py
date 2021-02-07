@@ -23,7 +23,7 @@ def getLanguage(event, context):
                                   SourceLanguageCode="en",
                                   TargetLanguageCode="de")
 
-    # create a response
+    # create a responseff
     response = {
         "statusCode": 200,
         "body": json.dumps(resultff,
