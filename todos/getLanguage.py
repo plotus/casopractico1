@@ -21,7 +21,7 @@ def getLanguage(event, context):
 
     if language == "en":
 
-        response = translate.translate_text(Text="hola", 
+        response = translate.translate_text(Text=result['Item']['text'],
                 SourceLanguageCode="es", TargetLanguageCode="en")
 
     elif language == "fr":
