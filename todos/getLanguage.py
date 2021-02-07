@@ -26,7 +26,7 @@ def getLanguage(event, context):
     # create a response
     response = {
         "statusCode": 200,
-        "body": json.dumps(result['Item'],
+        "body": json.dumps(resultff,
                            cls=decimalencoder.DecimalEncoder)
     }
 
