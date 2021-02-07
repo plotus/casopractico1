@@ -27,7 +27,13 @@ def getLanguage(event, context):
     elif language == "fr":    
         texto = json.dumps(result['Item'],
                            cls=decimalencoder.DecimalEncoder)
-        response = translate.translate_text(Text=texto['text'], 
+        response = translate.translate_text(Text=texto, 
+                SourceLanguageCode="es", TargetLanguageCode="fr")
+
+    elif language == "uu":    
+        texto = json.dumps(result['Item'],
+                           cls=decimalencoder.DecimalEncoder)
+        response = translate.translate_text(Text=texto[2], 
                 SourceLanguageCode="es", TargetLanguageCode="fr")
 
     # create a responseff
