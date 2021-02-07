@@ -10,6 +10,8 @@ translate = boto3.client(service_name='translate')
 def getLanguage(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
+    language = event['pathParameters']['language']
+
     # fetch todo from the database hola
     result = table.get_item(
         Key={
