@@ -5,11 +5,12 @@ from todos import decimalencoder
 import boto3
 dynamodb = boto3.resource('dynamodb')
 
+translate = boto3.client(service_name='translate')
 
 def getLanguage(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
 
-    # fetch todo from the database hola2
+    # fetch todo from the database hola
     result = table.get_item(
         Key={
             'id': event['pathParameters']['id']
