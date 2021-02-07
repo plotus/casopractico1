@@ -19,6 +19,16 @@ def getLanguage(event, context):
         }
     )
 
+    if language == "en":
+
+        response = translate.translate_text("hola", 
+                SourceLanguageCode="es", TargetLanguageCode="en")
+
+    elif language == "fr":    
+
+        response = translate.translate_text("hola", 
+                SourceLanguageCode="es", TargetLanguageCode="fr")
+
     # create a response
     response = {
         "statusCode": 200,
