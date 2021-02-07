@@ -19,7 +19,7 @@ def getLanguage(event, context):
         }
     )
 
-    resultff = translate.translate_text(Text="Hello, World",
+    resultff = translate.translate_text(Text="Hello, Worldd",
                                   SourceLanguageCode="en",
                                   TargetLanguageCode="de")
 
