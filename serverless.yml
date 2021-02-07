@@ -16,18 +16,8 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
+        - translate:*
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
-      Action: 
-         - translate:*,
-         - comprehend:DetectDominantLanguage
-         - cloudwatch:GetMetricStatistics
-         - cloudwatch:ListMetrics
-         - s3:ListAllMyBuckets
-         - s3:ListBucket
-         - s3:GetBucketLocation
-         - iam:ListRoles
-         - iam:GetRole
-        Resource: "*"
 
 functions:
   create:
@@ -53,10 +43,6 @@ functions:
           path: todos/{id}
           method: get
           cors: true
-
-  getLanguage:
-    handler: todos/getLanguage.getLanguage
-    events:
       - http:
           path: todos/{id}/{language}
           method: get
